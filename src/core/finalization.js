@@ -17,3 +17,4 @@
 export function finalizeMemory(matrix, outlen) {
   throw new Error('finalizeMemory will be implemented in Phase 7');
 }
+

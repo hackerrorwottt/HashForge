@@ -94,3 +94,4 @@ export const BLAKE2B = Object.freeze({
   MAX_KEY_BYTES: 64,
   ROUNDS: 12
 });
+

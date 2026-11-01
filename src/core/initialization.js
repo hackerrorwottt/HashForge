@@ -26,3 +26,4 @@ export function computeH0(params) {
 export function initializeFirstBlocks(matrix, h0) {
   throw new Error('initializeFirstBlocks will be implemented in Phase 4');
 }
+

@@ -25,3 +25,4 @@ export class MemoryMatrix {
     this.totalBytes = this.blockCount * BLOCK_BYTES;
   }
 }
+

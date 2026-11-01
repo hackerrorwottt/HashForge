@@ -17,3 +17,4 @@
 export function variableLengthHash(message, outlen) {
   throw new Error('Variable-length hash H\' will be completed in Phase 3');
 }
+

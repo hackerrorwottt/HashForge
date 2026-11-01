@@ -14,3 +14,4 @@
 export async function verify(encodedHash, candidatePassword) {
   throw new Error('verify API will be implemented in Phase 8');
 }
+

@@ -16,3 +16,4 @@
 export async function hash(password, options = {}) {
   throw new Error('hash API will be implemented in Phase 8');
 }
+

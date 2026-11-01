@@ -17,3 +17,4 @@
 export function getReferenceBlockIndex(context) {
   throw new Error('getReferenceBlockIndex will be implemented in Phase 6');
 }
+

@@ -20,3 +20,4 @@
 export function compressBlock(X, Y, destination, xorWithDest = false) {
   throw new Error('compressBlock will be implemented in Phase 5');
 }
+

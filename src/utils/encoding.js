@@ -90,3 +90,4 @@ export function parseEncodedHash(encodedString) {
     hash: fromUnpaddedBase64(hashStr)
   };
 }
+

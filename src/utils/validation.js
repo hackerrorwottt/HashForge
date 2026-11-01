@@ -77,3 +77,4 @@ export function normalizeBuffer(input, paramName = 'Input') {
   }
   throw new TypeError(`${paramName} must be a string, Buffer, or Uint8Array`);
 }
+

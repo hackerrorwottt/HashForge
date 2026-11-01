@@ -165,8 +165,8 @@ HashForge enforces rigorous defensive security boundaries:
 | Phase | Milestone | Status |
 | :--- | :--- | :--- |
 | **Phase 1** | Repository Setup, Architecture & Module Stubs | **Complete** |
-| **Phase 2** | RFC 7693 BLAKE2b 64-bit Compression Engine | Up Next |
-| **Phase 3** | RFC 9106 §3.2 Variable-Length Hashing ($H'$) | Scheduled |
+| **Phase 2** | RFC 7693 BLAKE2b 64-bit Compression Engine | **Complete** |
+| **Phase 3** | RFC 9106 §3.2 Variable-Length Hashing ($H'$) | Up Next |
 | **Phase 4** | Memory Block Matrix & $H_0$ Initialization | Scheduled |
 | **Phase 5** | Compression Function $G$ & BlaMka Arithmetic | Scheduled |
 | **Phase 6** | Argon2id Hybrid Addressing & Memory Passes | Scheduled |
@@ -195,3 +195,4 @@ npm run test:watch
 ## 8. License
 
 Apache License 2.0. See [LICENSE](LICENSE) for details.
+

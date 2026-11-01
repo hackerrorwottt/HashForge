@@ -16,3 +16,4 @@
 export function needsRehash(encodedHash, desiredOptions = {}) {
   throw new Error('needsRehash API will be implemented in Phase 8');
 }
+
