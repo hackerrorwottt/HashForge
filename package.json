@@ -1,0 +1,32 @@
+{
+  "name": "hashforge",
+  "version": "0.1.0",
+  "description": "Independent, zero-dependency, pure-JavaScript implementation of the Argon2id password-hashing algorithm (RFC 9106)",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "benchmark": "node benchmarks/benchmark.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "argon2",
+    "argon2id",
+    "password-hash",
+    "cryptography",
+    "kdf",
+    "rfc9106",
+    "blake2b"
+  ],
+  "author": "HashForge Contributors",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}
