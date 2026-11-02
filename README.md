@@ -168,8 +168,8 @@ HashForge enforces rigorous defensive security boundaries:
 | **Phase 2** | RFC 7693 BLAKE2b 64-bit Compression Engine | **Complete** |
 | **Phase 3** | RFC 9106 §3.2 Variable-Length Hashing ($H'$) | **Complete** |
 | **Phase 4** | Memory Block Matrix & $H_0$ Initialization | **Complete** |
-| **Phase 5** | Compression Function $G$ & BlaMka Arithmetic | Up Next |
-| **Phase 6** | Argon2id Hybrid Addressing & Memory Passes | Scheduled |
+| **Phase 5** | Compression Function $G$ & BlaMka Arithmetic | **Complete** |
+| **Phase 6** | Argon2id Hybrid Addressing & Memory Passes | Up Next |
 | **Phase 7** | Final Block XOR & MCF Encoding/Parsing | Scheduled |
 | **Phase 8** | High-Level Public API (`hash`, `verify`, `needsRehash`) | Scheduled |
 | **Phase 9** | RFC 9106 Official Test Vectors & Differential Testing | Scheduled |
