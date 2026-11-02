@@ -122,3 +122,4 @@ describe('Phase 3: RFC 9106 Section 3.2 Variable-Length Hash Function H\'', () =
     });
   });
 });
+
