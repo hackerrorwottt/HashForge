@@ -179,3 +179,4 @@ export const LIMITS: {
   readonly MIN_SALT_LENGTH: 8;
   readonly MAX_SALT_LENGTH: 4294967295;
 };
+
