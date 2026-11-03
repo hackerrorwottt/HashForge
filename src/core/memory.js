@@ -41,6 +41,14 @@ export class MemoryMatrix {
   }
 
   /**
+   * Alias for lanes (degree of parallelism p).
+   * @returns {number}
+   */
+  get laneCount() {
+    return this.lanes;
+  }
+
+  /**
    * Calculates the byte offset for block B[lane][column].
    *
    * @param {number} lane - Lane index [0, p - 1]
