@@ -45,6 +45,7 @@ export function formatEncodedHash({ type, version, memoryCost, timeCost, paralle
 
 /**
  * Parses an Argon2 Modular Crypt Format (MCF) string into its constituent parameters.
+ * Format: $argon2id$v=19$m=<m>,t=<t>,p=<p>$<base64salt>$<base64hash>
  *
  * @param {string} encodedString
  * @returns {Object} Parsed parameters
@@ -55,19 +56,28 @@ export function parseEncodedHash(encodedString) {
   }
 
   const parts = encodedString.split('$');
-  // Expected structure: ["", "argon2id", "v=19", "m=65536,t=3,p=4", "<salt>", "<hash>"]
-  // Note: Optional version "v=19" might be absent in older versions, but RFC 9106 specifies it.
+  // Format: $argon2id$v=19$m=65536,t=3,p=4$<salt>$<hash>
   if (parts.length < 5 || parts[0] !== '') {
-    throw new Error('Invalid encoded Argon2 hash format');
+    throw new Error('Invalid encoded Argon2 hash format: malformed segments');
   }
 
   let index = 1;
   const type = parts[index++];
-  let version = 19; // Default v1.3
+  if (type !== 'argon2id' && type !== 'argon2i' && type !== 'argon2d') {
+    throw new Error(`Invalid Argon2 algorithm type in hash: ${type}`);
+  }
 
+  let version = 19;
   if (parts[index].startsWith('v=')) {
     version = parseInt(parts[index].slice(2), 10);
+    if (isNaN(version) || (version !== 16 && version !== 19)) {
+      throw new Error(`Invalid Argon2 version in hash: ${parts[index]}`);
+    }
     index++;
+  }
+
+  if (parts.length - index !== 3) {
+    throw new Error('Invalid encoded Argon2 hash format: incorrect parameter, salt, and hash count');
   }
 
   const paramStr = parts[index++];
@@ -77,8 +87,22 @@ export function parseEncodedHash(encodedString) {
   const params = {};
   for (const pair of paramStr.split(',')) {
     const [k, v] = pair.split('=');
-    params[k] = parseInt(v, 10);
+    if (!k || v === undefined) {
+      throw new Error(`Invalid parameter pair in encoded hash: ${pair}`);
+    }
+    const num = parseInt(v, 10);
+    if (isNaN(num) || num < 1) {
+      throw new Error(`Invalid parameter value for ${k}: ${v}`);
+    }
+    params[k] = num;
   }
+
+  if (params.m === undefined || params.t === undefined || params.p === undefined) {
+    throw new Error('Encoded hash parameters must include m, t, and p');
+  }
+
+  const salt = fromUnpaddedBase64(saltStr);
+  const hash = fromUnpaddedBase64(hashStr);
 
   return {
     type,
@@ -86,8 +110,8 @@ export function parseEncodedHash(encodedString) {
     memoryCost: params.m,
     timeCost: params.t,
     parallelism: params.p,
-    salt: fromUnpaddedBase64(saltStr),
-    hash: fromUnpaddedBase64(hashStr)
+    salt,
+    hash
   };
 }
 
