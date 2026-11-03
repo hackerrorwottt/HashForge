@@ -92,9 +92,9 @@ describe('HashForge High-Level Public API', () => {
       const password = 'TestingCorruptHash';
       const encoded = await hash(password, testFastOptions);
 
-      // Corrupt the hash part
+      // Corrupt the hash part (flip the leading base64 character to alter payload bits)
       const parts = encoded.split('$');
-      parts[5] = parts[5].slice(0, -1) + (parts[5].slice(-1) === 'A' ? 'B' : 'A');
+      parts[5] = (parts[5][0] === 'A' ? 'B' : 'A') + parts[5].slice(1);
       const corruptedHash = parts.join('$');
 
       expect(await verify(corruptedHash, password)).toBe(false);
