@@ -7,6 +7,7 @@
 export { hash } from './api/hash.js';
 export { verify } from './api/verify.js';
 export { needsRehash } from './api/needsRehash.js';
+export { argon2Core } from './core/argon2.js';
 
 export {
   ARGON2_TYPES,

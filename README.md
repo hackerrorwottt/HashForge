@@ -171,8 +171,8 @@ HashForge enforces rigorous defensive security boundaries:
 | **Phase 5** | Compression Function $G$ & BlaMka Arithmetic | **Complete** |
 | **Phase 6** | Argon2id Hybrid Addressing & Memory Passes | **Complete** |
 | **Phase 7** | Final Block XOR & End-to-End Core Pipeline | **Complete** |
-| **Phase 8** | High-Level Public API (`hash`, `verify`, `needsRehash`) | Up Next |
-| **Phase 9** | RFC 9106 Official Test Vectors & Differential Testing | Scheduled |
+| **Phase 8** | High-Level Public API (`hash`, `verify`, `needsRehash`) | **Complete** |
+| **Phase 9** | RFC 9106 Official Test Vectors & Differential Testing | Up Next |
 | **Phase 10** | Performance Profiling & 64-bit Arithmetic Optimizations | Scheduled |
 | **Phase 11** | Documentation, Packaging & Distribution Preparation | Scheduled |
 
