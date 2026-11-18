@@ -19,7 +19,19 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "benchmark": "node benchmarks/benchmark.js"
+    "benchmark": "node benchmarks/benchmark.js",
+    "prepublishOnly": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackerrorwottt/HashForge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hackerrorwottt/HashForge/issues"
+  },
+  "homepage": "https://github.com/hackerrorwottt/HashForge#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=18.0.0"
